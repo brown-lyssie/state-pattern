@@ -1,41 +1,41 @@
 public class Pizza {
-    State baked;
-    State cooked;
-    State delivered;
-    State undeliverable;
-    State currentState;
+    private State baked;
+    private State cooked;
+    private State delivered;
+    private State undeliverable;
+    private State currentState;
     public Pizza() {
-        this.baked = new Baked(this);
-        this.baked = new Cooked(this);
-        this.baked = new Delivered(this);
-        this.baked = new Undeliverable(this);
-        this.currentState = cooked;
+        baked = new Baked(this);
+        cooked = new Cooked(this);
+        delivered = new Delivered(this);
+        undeliverable = new Undeliverable(this);
+        currentState = cooked;
     }
     // state methods
     public void setState(State newState) {
-        this.state = newState;
+        currentState = newState;
     }
     // state getters
     public State getBakedState() {
-        return this.baked;
+        return baked;
     }
     public State getState() {
-        return this.currentState;
+        return currentState;
     }
     public State getCookedState() {
-        return this.cooked;
+        return cooked;
     }
     public State getDeliveredState() {
-        return this.delivered;
+        return delivered;
     }
     public State getUndeliveredState() {
-        return this.undelivered;
+        return undeliverable;
     }
     // bake and deliver functions
     public void bake() {
-        state.bake();
+        currentState.bake();
     }
     public void deliver() {
-        state.deliver();
+        currentState.deliver();
     }
 }

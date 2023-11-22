@@ -1,7 +1,7 @@
 public class Undeliverable implements State {
     Pizza pizza;
-    public Cooked(Pizza newPizza) {
-        this.pizza = newPizza;
+    public Undeliverable(Pizza newPizza) {
+        pizza = newPizza;
     }
     public void bake() {
         System.out.println("Can't bake an undeliverable pizza");
